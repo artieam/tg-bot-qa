@@ -1,5 +1,5 @@
 const { Telegraf, Scenes, session } = require("telegraf");
-const fetch = require("node-fetch");
+// const fetch = require("node-fetch");
 
 const stage = new Scenes.Stage([]);
 
@@ -20,9 +20,6 @@ bot.telegram.setMyCommands([
 ]);
 
 bot.start(async (ctx) => {
-    ctx.session.cnt = 0;
-    ctx.session.result = -1;
-    const e = await saveUserData(ctx);
     return ctx.reply(
         `Приветствую, ${
             ctx.from.first_name ? ctx.from.first_name : "хороший человек"
